@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.urlbtn:
                 String url;
-                EditText editTexturl = (EditText) findViewById(R.id.editTextLoc);
+                EditText editTexturl = (EditText) findViewById(R.id.editTexturl);
                 url=editTexturl.getText().toString();
                 intent.setData(Uri.parse(url));
                 startActivity(intent);
@@ -58,7 +58,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.txtbtn:
-
+                String message;
+                intent.setType("text/plain");
+                EditText editText = (EditText) findViewById(R.id.editText);
+                message= editText.getText().toString();
+                intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Shared message");
+                intent.putExtra(android.content.Intent.EXTRA_TEXT, message);
+                /*Fire!*/
+                startActivity(Intent.createChooser(intent, "Chose how to share"));
                 break;
         }
 
