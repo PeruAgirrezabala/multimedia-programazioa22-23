@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kaixo tostada</string>
+    <string name="toast_message">Kaixo tostada</string>
+    <string name="button2">Tostada</string>
+    <string name="button5">Botoia</string>
+    <string name="button">Zero</string>
+</resources>
