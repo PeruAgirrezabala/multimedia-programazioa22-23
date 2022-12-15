@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Calculadora</string>
-    <string name="lehenengo_zenbakia">"Primer numero: "</string>
-    <string name="bigarren_zenbakia">"Segundo numero: "</string>
-    <string name="Hurrengoa">Siguiente</string>
-    <string name="emaitza">Resultado</string>
-    <string name="galdera">Que operacion desea realizar?</string>
-</resources>

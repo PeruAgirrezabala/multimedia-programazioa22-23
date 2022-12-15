@@ -15,8 +15,8 @@ public class Flight {
     Bitmap flight1,flight2;
 
     Flight(int screenY, Resources res){
-        flight1 = BitmapFactory.decodeResource(res,R.drawable);
-        flight2 = BitmapFactory.decodeResource(res,R.drawable);
+        flight1 = BitmapFactory.decodeResource(res,R.drawable.fly1);
+        flight2 = BitmapFactory.decodeResource(res,R.drawable.fly2);
 
         width /=4;
         height /=4;

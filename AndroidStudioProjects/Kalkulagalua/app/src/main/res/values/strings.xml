@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">Kalkulagalua</string>
-    <string name="lehenengo_zenbakia">1.Zebakia: </string>
-    <string name="bigarren_zenbakia">2. Zenbakia</string>
-    <string name="Hurrengoa">Hurrengoa</string>
-    <string name="emaitza">Emaitza: </string>
-    <string name="galdera">Ze eragiketa egin nahi duzu?</string>
-
-</resources>
