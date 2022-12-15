@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 public class Flight {
 
     int x,y;
+    boolean isGoingUp=false;
     int width,height;
     int wingCounter=0;
     Bitmap flight1,flight2;
