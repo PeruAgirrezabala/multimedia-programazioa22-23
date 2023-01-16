@@ -10,6 +10,7 @@ public class UserRepository {
     private final List<User> mUsersList;
     private final UserDao mUserDao;
 
+
     public UserRepository(Context context) {
         UserDatabase db = UserDatabase.getInstance(context);
         mUserDao = db.userDao();
