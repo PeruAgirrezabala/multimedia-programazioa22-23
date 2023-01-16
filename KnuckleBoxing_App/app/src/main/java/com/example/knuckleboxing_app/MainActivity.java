@@ -8,16 +8,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.io.Serializable;
 
-import model.User;
+import java.io.Serializable;
+import java.util.List;
+
+import com.example.knuckleboxing_app.model.User;
+import com.example.knuckleboxing_app.model.UserRepository;
 
 public class MainActivity extends AppCompatActivity {
+    private UserRepository mRepository;
+    private List<User> mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         Button loginbtn = findViewById(R.id.login_btn);
         loginbtn.setOnClickListener(new View.OnClickListener() {
@@ -39,14 +45,23 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void toLogin() {
-        User user = (User) getIntent().getSerializableExtra("usuario1");
-        if (getIntent().getSerializableExtra("usuario1") != null) {
-            User user1 = (User) getIntent().getSerializableExtra("usuario1");
-            Intent loginactivity = new Intent(MainActivity.this, LoginActivity.class);
-            loginactivity.putExtra("usuario1", (Serializable) user);
-            startActivity(loginactivity);
-        } else {
-            Toast.makeText(MainActivity.this, "bete erabiltzailea mesedez", Toast.LENGTH_SHORT).show();
+        //User user = (User) getIntent().getSerializableExtra("usuario1");
+        //if (getIntent().getSerializableExtra("usuario1") != null) {
+           // User user1 = (User) getIntent().getSerializableExtra("usuario1");
+          //  Intent loginactivity = new Intent(MainActivity.this, LoginActivity.class);
+         //   loginactivity.putExtra("usuario1", (Serializable) user);
+         //   startActivity(loginactivity);
+        //} else {
+         //   Toast.makeText(MainActivity.this, "bete erabiltzailea mesedez", Toast.LENGTH_SHORT).show();
+        //}
+        mRepository = new UserRepository(getApplicationContext());
+        mUser = mRepository.getAllUsers();
+        Intent toLogin= new Intent(MainActivity.this,LoginActivity.class);
+        if(mUser !=null){
+            startActivity(toLogin);
+
+        }else{
+            Toast.makeText(this, "Lehenik eta behin kontua sortu behar duzu", Toast.LENGTH_SHORT).show();
         }
     }
 

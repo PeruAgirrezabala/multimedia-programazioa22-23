@@ -11,12 +11,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.Serializable;
+import java.util.List;
 
-import model.User;
+import com.example.knuckleboxing_app.model.User;
+import com.example.knuckleboxing_app.model.UserRepository;
 
 public class LoginActivity extends AppCompatActivity implements Serializable {
     Button confirm_login_btn;
     TextView username_login_tv, password_login_tv;
+    private UserRepository mRepository;
+    private List<User> mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,18 +45,30 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
 
 
     public void logAction() {
-        User user1 = (User) getIntent().getSerializableExtra("usuario1");
-        String account_user = user1.usuario;
-        String account_password = user1.contraseña;
+        //User user1 = (User) getIntent().getSerializableExtra("usuario1");
+        //String account_user = user1.usuario;
+        //String account_password = user1.contraseña;
         Intent intent = new Intent(LoginActivity.this, ContentActivity.class);
         String login_user = username_login_tv.getText().toString();
         String login_password = password_login_tv.getText().toString();
-        if (account_user.contentEquals(login_user) && account_password.contentEquals(login_password)) {
-            intent.putExtra("usuario1", (Serializable) user1);
-            startActivity(intent);
-        } else {
-            Toast.makeText(LoginActivity.this, "egiaztatu datuak ondo sartu dituzula", Toast.LENGTH_LONG).show();
+        mRepository = new UserRepository(this);
+        mUser = mRepository.getAllUsers();
+        for(User user : mUser){
+            if(user.usuario.equals(login_user)|| user.contraseña.equals(login_password)){
+                startActivity(intent);
+            }else{
+                Toast.makeText(this, "Errorea, Sartu datu egokiak mesedez", Toast.LENGTH_SHORT).show();
+            }
         }
+        
+
+        //if (account_user.contentEquals(login_user) && account_password.contentEquals(login_password)) {
+        //    intent.putExtra("usuario1", (Serializable) user1);
+        //    startActivity(intent);
+        //} else {
+        //    Toast.makeText(LoginActivity.this, "egiaztatu datuak ondo sartu dituzula", Toast.LENGTH_LONG).show();
+        //}
+
     }
 
 

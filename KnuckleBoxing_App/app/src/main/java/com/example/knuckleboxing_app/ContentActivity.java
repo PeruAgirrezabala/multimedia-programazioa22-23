@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import java.io.Serializable;
 
-import model.User;
+import com.example.knuckleboxing_app.model.User;
 
 public class ContentActivity extends AppCompatActivity implements Serializable {
     Button map_btn, logOut_btn;

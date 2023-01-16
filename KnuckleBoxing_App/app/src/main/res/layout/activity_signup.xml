@@ -27,7 +27,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
-        android:text="@string/usuario"
+        android:hint="@string/usuario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -125,6 +125,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.189"
-        app:srcCompat="@drawable/bg1" />/>
+        app:srcCompat="@drawable/bg1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
