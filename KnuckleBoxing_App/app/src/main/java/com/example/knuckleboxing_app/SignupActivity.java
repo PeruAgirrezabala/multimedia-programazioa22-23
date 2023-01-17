@@ -27,9 +27,9 @@ public class SignupActivity extends AppCompatActivity implements Serializable {
     RadioGroup sexo_rg;
     public int male_rb_id, female_rb_id, other_rb_id;
 
-    private  UserRepository mRepository;
+    private UserRepository mRepository;
 
-    private  List<User> mUser;
+    private LiveData<List<User>> mUser;
 
 
     @Override
@@ -61,31 +61,29 @@ public class SignupActivity extends AppCompatActivity implements Serializable {
             Boolean experiencia = experience_cb.isChecked();
             User user = new User(username, password, gender, experiencia);
             Intent intent = new Intent(SignupActivity.this, MainActivity.class);
-            //intent.putExtra("usuario1", (Serializable) user);
-            //startActivity(intent);
             mRepository = new UserRepository(this);
-            mUser= mRepository.getAllUsers();
-            for (User loopUser : mUser) {
-                if(loopUser.equals(user)){
-                    exist=true;
+            mUser = mRepository.getAllUsers();
+            for (User loopUser : mUser.getValue()) {
+                if (loopUser.equals(user)) {
+                    exist = true;
                 }
             }
-            insertAction(user,exist);
+            insertAction(user, exist);
             startActivity(intent);
 
 
         }
     }
-    public void insertAction (User user,boolean exist){
+
+    public void insertAction(User user, boolean exist) {
         mRepository = new UserRepository(this);
-        mUser= mRepository.getAllUsers();
-        if(exist = true){
+        mUser = mRepository.getAllUsers();
+        if (exist = true) {
             mRepository.insert(user);
-        }else{
+        } else {
             Toast.makeText(this, "jada erabiltzailea existitzen da", Toast.LENGTH_SHORT).show();
         }
     }
-
 
 
     public void variableakSortu() {
@@ -102,7 +100,6 @@ public class SignupActivity extends AppCompatActivity implements Serializable {
         other_rb_id = other_btn.getId();
     }
 
-    //kontua sortu aurretik ea datu guztiak dauden egiaztatu
     public boolean danaBeteta() {
         boolean beteta = true;
         if (usuario_tv.getText() == null) {

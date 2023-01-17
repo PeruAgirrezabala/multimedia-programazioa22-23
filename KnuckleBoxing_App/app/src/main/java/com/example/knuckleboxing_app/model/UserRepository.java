@@ -6,18 +6,20 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
+import kotlin.SuspendKt;
+
 public class UserRepository {
-    private final List<User> mUsersList;
+    private final LiveData<List<User>> mUsersList;
     private final UserDao mUserDao;
 
 
     public UserRepository(Context context) {
         UserDatabase db = UserDatabase.getInstance(context);
         mUserDao = db.userDao();
-        mUsersList = (List<User>) mUserDao.getAll();
+        mUsersList =  mUserDao.getAll();
     }
 
-    public List<User> getAllUsers() {
+    public LiveData<List<User>> getAllUsers() {
         return mUsersList;
     }
 

@@ -24,7 +24,6 @@ public class ContentActivity extends AppCompatActivity implements Serializable {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content);
         bariableakSortu();
-        //experientziaren arabera entrenamendu ezberdina esleitu
         if (user1.experiencia) {
             primer_entrenamiento_tv.setText(R.string.lunes);
             segundo_entrenamiento_tv.setText(R.string.miercoles);
@@ -48,14 +47,13 @@ public class ContentActivity extends AppCompatActivity implements Serializable {
 
     }
 
-    //botoia sakatzean mapara eramateko
+
     public void mapara() {
 
-        Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(LOCATION));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(LOCATION));
         startActivity(intent);
     }
 
-    //kontutik ateratzeko eta hasirara bueltatzeko
 
     public void logOutAction() {
         Intent intent = new Intent(ContentActivity.this, MainActivity.class);
@@ -64,7 +62,6 @@ public class ContentActivity extends AppCompatActivity implements Serializable {
     }
 
 
-    //aldagaiei balioak eman
     public void bariableakSortu() {
         map_btn = findViewById(R.id.map_btn);
         logOut_btn = findViewById((R.id.logOut_btn));
