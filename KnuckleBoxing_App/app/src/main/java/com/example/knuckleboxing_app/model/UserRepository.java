@@ -6,9 +6,7 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import kotlin.SuspendKt;
-
-public class UserRepository {
+public class UserRepository implements UserDao {
     private final LiveData<List<User>> mUsersList;
     private final UserDao mUserDao;
 
@@ -19,7 +17,7 @@ public class UserRepository {
         mUsersList =  mUserDao.getAll();
     }
 
-    public LiveData<List<User>> getAllUsers() {
+    public LiveData<List<User>> getAll() {
         return mUsersList;
     }
 

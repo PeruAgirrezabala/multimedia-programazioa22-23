@@ -1,4 +1,4 @@
-package com.example.knuckleboxing_app;
+package com.example.knuckleboxing_app.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import java.io.Serializable;
 
+import com.example.knuckleboxing_app.R;
 import com.example.knuckleboxing_app.model.User;
 
 public class ContentActivity extends AppCompatActivity implements Serializable {

@@ -17,6 +17,6 @@ public class UserViewModel extends AndroidViewModel {
         super(application);
         UserDao userdao = UserDatabase.getInstance(getApplication()).userDao();
         repository = new UserRepository((Context) userdao);
-        readAllData = repository.getAllUsers();
+        readAllData = repository.getAll();
     }
 }

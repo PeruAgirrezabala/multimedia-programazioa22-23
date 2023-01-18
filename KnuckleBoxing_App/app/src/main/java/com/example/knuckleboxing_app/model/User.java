@@ -13,20 +13,21 @@ public class User implements Serializable {
     @PrimaryKey
     @NonNull
     public String usuario;
-    @NonNull
+
     @ColumnInfo(name="password")
     public String contraseña;
-    @NonNull
+
     @ColumnInfo(name="genre")
     public String sexo;
-    @NonNull
+
     @ColumnInfo(name="experience")
     public boolean experiencia;
+
 
     public User(){
 
     }
-    public User(@NonNull String usuario,@NonNull String contraseña,@NonNull String sexo,boolean experiencia){
+    public User(String usuario, String contraseña, String sexo,boolean experiencia){
         this.usuario=usuario;
         this.contraseña=contraseña;
         this.sexo=sexo;

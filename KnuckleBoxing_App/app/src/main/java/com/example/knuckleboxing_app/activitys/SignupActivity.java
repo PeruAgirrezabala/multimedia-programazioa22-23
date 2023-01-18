@@ -1,4 +1,4 @@
-package com.example.knuckleboxing_app;
+package com.example.knuckleboxing_app.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
@@ -16,6 +16,7 @@ import android.widget.Toast;
 import java.io.Serializable;
 import java.util.List;
 
+import com.example.knuckleboxing_app.R;
 import com.example.knuckleboxing_app.model.User;
 import com.example.knuckleboxing_app.model.UserRepository;
 
@@ -62,7 +63,7 @@ public class SignupActivity extends AppCompatActivity implements Serializable {
             User user = new User(username, password, gender, experiencia);
             Intent intent = new Intent(SignupActivity.this, MainActivity.class);
             mRepository = new UserRepository(this);
-            mUser = mRepository.getAllUsers();
+            mUser = mRepository.getAll();
             for (User loopUser : mUser.getValue()) {
                 if (loopUser.equals(user)) {
                     exist = true;
@@ -77,7 +78,7 @@ public class SignupActivity extends AppCompatActivity implements Serializable {
 
     public void insertAction(User user, boolean exist) {
         mRepository = new UserRepository(this);
-        mUser = mRepository.getAllUsers();
+        mUser = mRepository.getAll();
         if (exist = true) {
             mRepository.insert(user);
         } else {

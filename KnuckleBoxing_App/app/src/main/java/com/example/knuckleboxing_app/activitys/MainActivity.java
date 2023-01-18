@@ -1,4 +1,4 @@
-package com.example.knuckleboxing_app;
+package com.example.knuckleboxing_app.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
@@ -10,9 +10,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-import java.io.Serializable;
 import java.util.List;
 
+import com.example.knuckleboxing_app.R;
 import com.example.knuckleboxing_app.model.User;
 import com.example.knuckleboxing_app.model.UserRepository;
 
@@ -48,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
     public void toLogin() {
 
         mRepository = new UserRepository(getApplicationContext());
-        mUser = mRepository.getAllUsers();
+        mUser = mRepository.getAll();
         Intent toLogin = new Intent(MainActivity.this, LoginActivity.class);
         if (mUser != null) {
             startActivity(toLogin);
 
         } else {
-            Toast.makeText(this, "Lehenik eta behin kontua sortu behar duzu", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Momentu honetan ez dago konturik sortuta", Toast.LENGTH_SHORT).show();
         }
     }
 
