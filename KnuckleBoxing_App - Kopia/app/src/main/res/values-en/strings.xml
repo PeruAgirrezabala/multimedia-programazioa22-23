@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KnuckleBoxing_app</string>
+    <string name="usuario">User</string>
+    <string name="contraseña">Password</string>
+    <string name="entrar">Log in</string>
+    <string name="crearcuenta">Create account</string>
+    <string name="hombre">Male</string>
+    <string name="mujer">Female</string>
+    <string name="otro">Other</string>
+    <string name="experiencia">Experience</string>
+    <string name="entrenamientos">Trainings of the week</string>
+    <string name="salir">Log out</string>
+    <string name="Mapa">Map</string>
+    <string name="lunes">Monday:  15:00 - 17:00</string>
+    <string name="martes">Tuesday:  19:00 - 21:00</string>
+    <string name="miercoles">Wednesday:  18:00 - 20:00</string>
+    <string name="jueves">Thursday: 20:00 - 22:00</string>
+</resources>

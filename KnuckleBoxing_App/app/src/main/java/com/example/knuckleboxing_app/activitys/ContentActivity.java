@@ -15,7 +15,7 @@ import com.example.knuckleboxing_app.R;
 import com.example.knuckleboxing_app.model.User;
 
 public class ContentActivity extends AppCompatActivity implements Serializable {
-    Button map_btn, logOut_btn;
+    Button map_btn, logOut_btn,teamMates_btn;
     TextView primer_entrenamiento_tv, segundo_entrenamiento_tv;
     User user1;
     private final static String LOCATION = "https://www.google.com/maps/search/?api=1&query=Smithfield+Boxing+Club";
@@ -45,6 +45,12 @@ public class ContentActivity extends AppCompatActivity implements Serializable {
                 mapara();
             }
         });
+        teamMates_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TeamMatesAction();
+            }
+        });
 
     }
 
@@ -58,17 +64,22 @@ public class ContentActivity extends AppCompatActivity implements Serializable {
 
     public void logOutAction() {
         Intent intent = new Intent(ContentActivity.this, MainActivity.class);
-        intent.putExtra("usuario1", user1);
         startActivity(intent);
     }
+    public void TeamMatesAction() {
+        Intent intent = new Intent(ContentActivity.this, TeamMatesActivity.class);
+        startActivity(intent);
+    }
+
 
 
     public void bariableakSortu() {
         map_btn = findViewById(R.id.map_btn);
         logOut_btn = findViewById((R.id.logOut_btn));
+        teamMates_btn = findViewById(R.id.button);
         primer_entrenamiento_tv = findViewById(R.id.training_tv);
         segundo_entrenamiento_tv = findViewById(R.id.training2_tv);
-        user1 = (User) getIntent().getSerializableExtra("usuario1");
+        user1 = (User) getIntent().getSerializableExtra("usuarioLogeado");
 
     }
 }

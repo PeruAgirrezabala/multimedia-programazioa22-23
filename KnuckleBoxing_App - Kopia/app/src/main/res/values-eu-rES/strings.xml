@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KnuckleBoxing_app</string>
+    <string name="usuario">Erabiltzailea</string>
+    <string name="contraseña">Pasahitza</string>
+    <string name="entrar">Sartu</string>
+    <string name="crearcuenta">Kontua sortu</string>
+    <string name="hombre">Gizona</string>
+    <string name="mujer">Emakumea</string>
+    <string name="otro">Beste bat</string>
+    <string name="experiencia">Experientzia</string>
+    <string name="entrenamientos">Asteko entrenamenduak</string>
+    <string name="salir">Saioa Itxi</string>
+    <string name="Mapa">Mapa</string>
+    <string name="lunes">Astelehena:  15:00 - 17:00</string>
+    <string name="martes">Asteartea:  19:00 - 21:00</string>
+    <string name="miercoles">Asteazkena:  18:00 - 20:00</string>
+    <string name="jueves">Osteguna: 20:00 - 22:00</string>
+</resources>

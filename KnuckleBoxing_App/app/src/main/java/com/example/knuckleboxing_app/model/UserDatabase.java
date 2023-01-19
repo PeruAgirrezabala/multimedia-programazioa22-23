@@ -46,8 +46,8 @@ public abstract class UserDatabase extends RoomDatabase {
                 User user1 = new User("proba","proba","otro",true);
                 User user2 = new User("admin","admin", "otro",false);
 
-                dao.insert(user1);
-                dao.insert(user2);
+                dao.insertUser(user1);
+                dao.insertUser(user2);
             });
         }
     };

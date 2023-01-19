@@ -15,10 +15,14 @@ import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import com.example.knuckleboxing_app.R;
+import com.example.knuckleboxing_app.model.DBTaskAddUser;
+import com.example.knuckleboxing_app.model.DBTaskGetUserList;
 import com.example.knuckleboxing_app.model.User;
-import com.example.knuckleboxing_app.model.UserRepository;
+import com.example.knuckleboxing_app.model.UserDao;
+import com.example.knuckleboxing_app.model.UserDatabase;
 
 public class SignupActivity extends AppCompatActivity implements Serializable {
     Button crear_btn;
@@ -27,8 +31,6 @@ public class SignupActivity extends AppCompatActivity implements Serializable {
     CheckBox experience_cb;
     RadioGroup sexo_rg;
     public int male_rb_id, female_rb_id, other_rb_id;
-
-    private UserRepository mRepository;
 
     private LiveData<List<User>> mUser;
 
@@ -43,7 +45,13 @@ public class SignupActivity extends AppCompatActivity implements Serializable {
         crear_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                singUpAction();
+                try {
+                    singUpAction();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -51,8 +59,8 @@ public class SignupActivity extends AppCompatActivity implements Serializable {
     }
 
 
-    public void singUpAction() {
-        if (danaBeteta() == true) {
+    public void singUpAction() throws ExecutionException, InterruptedException {
+        if (danaBeteta()) {
             boolean exist = false;
             String username = usuario_tv.getText().toString();
             String password = contraseña_tv.getText().toString();
@@ -62,9 +70,11 @@ public class SignupActivity extends AppCompatActivity implements Serializable {
             Boolean experiencia = experience_cb.isChecked();
             User user = new User(username, password, gender, experiencia);
             Intent intent = new Intent(SignupActivity.this, MainActivity.class);
-            mRepository = new UserRepository(this);
-            mUser = mRepository.getAll();
-            for (User loopUser : mUser.getValue()) {
+            UserDatabase db = UserDatabase.getInstance(getApplicationContext());
+            DBTaskGetUserList task = new DBTaskGetUserList(db.userDao());
+            task.execute();
+            List<User> userList = task.get(); // aqui se obtiene el resultado
+            for (User loopUser : userList) {
                 if (loopUser.equals(user)) {
                     exist = true;
                 }
@@ -77,10 +87,10 @@ public class SignupActivity extends AppCompatActivity implements Serializable {
     }
 
     public void insertAction(User user, boolean exist) {
-        mRepository = new UserRepository(this);
-        mUser = mRepository.getAll();
-        if (exist = true) {
-            mRepository.insert(user);
+        UserDatabase db = UserDatabase.getInstance(this.getApplicationContext());
+        if (exist != true) {
+           DBTaskAddUser dbTaskAddUser= new DBTaskAddUser(db.userDao(),user);
+           dbTaskAddUser.execute();
         } else {
             Toast.makeText(this, "jada erabiltzailea existitzen da", Toast.LENGTH_SHORT).show();
         }

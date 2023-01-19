@@ -11,13 +11,15 @@ import android.widget.Toast;
 
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import com.example.knuckleboxing_app.R;
+import com.example.knuckleboxing_app.model.DBTaskGetUserList;
 import com.example.knuckleboxing_app.model.User;
-import com.example.knuckleboxing_app.model.UserRepository;
+import com.example.knuckleboxing_app.model.UserDatabase;
 
 public class MainActivity extends AppCompatActivity {
-    private UserRepository mRepository;
+
     private LiveData<List<User>> mUser;
 
     @Override
@@ -30,7 +32,13 @@ public class MainActivity extends AppCompatActivity {
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toLogin();
+                try {
+                    toLogin();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
         Button signupbtn = findViewById(R.id.signup_btn);
@@ -45,12 +53,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void toLogin() {
+    public void toLogin() throws ExecutionException, InterruptedException {
 
-        mRepository = new UserRepository(getApplicationContext());
-        mUser = mRepository.getAll();
+        UserDatabase db = UserDatabase.getInstance(getApplicationContext());
+        DBTaskGetUserList task = new DBTaskGetUserList(db.userDao());
+        task.execute();
+        List<User> userList = task.get(); // aqui se obtiene el resultado
         Intent toLogin = new Intent(MainActivity.this, LoginActivity.class);
-        if (mUser != null) {
+        if (userList != null) {
             startActivity(toLogin);
 
         } else {
