@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="#BF6A6767"
     tools:context=".activitys.SignupActivity">
 
     <TextView
@@ -25,9 +25,9 @@
         android:layout_height="45dp"
         android:background="@color/white"
         android:ems="10"
+        android:hint="@string/usuario"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
-        android:hint="@string/usuario"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
@@ -106,9 +106,9 @@
         android:layout_marginTop="16dp"
         android:background="@color/white"
         android:ems="10"
+        android:hint="@string/contraseña"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
-        android:hint="@string/contraseña"
         app:layout_constraintBottom_toTopOf="@+id/signup_genre_rg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"

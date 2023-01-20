@@ -31,7 +31,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyView
     @NonNull
     @Override
     public UserListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_team_mates, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.recyclerview, parent, false);
 
         return new MyViewHolder(view);
     }

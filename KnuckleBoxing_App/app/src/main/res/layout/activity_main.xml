@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="#BF6A6767"
     tools:context=".activitys.MainActivity">
 
     <!-- Android Small - 1 -->
@@ -14,6 +14,7 @@
         android:id="@+id/signup_btn"
         android:layout_width="153dp"
         android:layout_height="52dp"
+        android:backgroundTint="#FFFFFFFF"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="28dp"

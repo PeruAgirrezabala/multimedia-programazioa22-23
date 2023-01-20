@@ -62,17 +62,23 @@ public class LoginActivity extends AppCompatActivity  {
         DBTaskGetUserList task = new DBTaskGetUserList(db.userDao());
         task.execute();
         List<User> userList = task.get(); // aqui se obtiene el resultado
-        for (User user : userList) {
-            if (user.usuario.equals(login_user) || user.contraseña.equals(login_password)) {
-                to_content.putExtra("usuarioLogeado", (Serializable) user);
-                startActivity(to_content);
-            } else {
-                Toast.makeText(this, "Errorea, Sartu datu egokiak mesedez", Toast.LENGTH_SHORT).show();
+        boolean login=false;
+
+            for (User user : userList) {
+                if (user.usuario.equals(login_user) || user.contraseña.equals(login_password)) {
+                    login= true;
+                    to_content.putExtra("usuarioLogeado", (Serializable) user);
+                    startActivity(to_content);
+                }
+
+                }
+                if(login == false) {
+                    Toast.makeText(this, "Errorea, Sartu datu egokiak mesedez", Toast.LENGTH_SHORT).show();
+                }
             }
-        }
+
 
 
     }
 
 
-}
