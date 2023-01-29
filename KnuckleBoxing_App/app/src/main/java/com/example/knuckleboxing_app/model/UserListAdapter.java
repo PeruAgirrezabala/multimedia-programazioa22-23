@@ -38,12 +38,12 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull UserListAdapter.MyViewHolder holder, int position) {
-        holder.userTV.setText(this.userList.get(position).usuario);
-        holder.generoTV.setText(this.userList.get(position).sexo);
+        holder.userTV.setText("NOMBRE:"+this.userList.get(position).usuario);
+        holder.generoTV.setText("SEXO:"+this.userList.get(position).sexo);
         if (this.userList.get(position).experiencia) {
-            holder.experienciaTV.setText("SI");
+            holder.experienciaTV.setText("EXPERIENCIA:SI");
         } else {
-            holder.experienciaTV.setText("NO");
+            holder.experienciaTV.setText("EXPERIENCIA:NO");
         }
     }
 

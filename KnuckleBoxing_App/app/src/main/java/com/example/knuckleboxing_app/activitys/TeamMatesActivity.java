@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.knuckleboxing_app.R;
@@ -21,6 +23,7 @@ import java.util.concurrent.ExecutionException;
 
 public class TeamMatesActivity extends AppCompatActivity {
     private UserListAdapter userListAdapter;
+    private Button button_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,14 @@ public class TeamMatesActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+        button_back=findViewById(R.id.button2);
+        button_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent to_content = new Intent(TeamMatesActivity.this, ContentActivity.class);
+                startActivity(to_content);
+            }
+        });
 
 
 
@@ -71,4 +81,5 @@ public class TeamMatesActivity extends AppCompatActivity {
 
         super.onActivityResult(requestCode, resultCode, data);
     }
+
 }
