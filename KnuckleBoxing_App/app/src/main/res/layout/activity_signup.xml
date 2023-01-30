@@ -1,135 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#BF6A6767"
-    tools:context=".activitys.SignupActivity">
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="216dp"
-        android:layout_height="53dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="28dp"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="328dp"
-        tools:text="𝓚𝓷𝓾𝓬𝓴𝓵𝓮 𝓑𝓸𝔁𝓲𝓷𝓰" />
-
-    <EditText
-        android:id="@+id/signup_user_ed"
-        android:layout_width="330dp"
-        android:layout_height="45dp"
-        android:background="#9AFFFFFF"
-        android:ems="10"
-        android:hint="@string/usuario"
-        android:inputType="textPersonName"
-        android:paddingLeft="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.591"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/signup_crearcuenta_btn"
-        android:layout_width="161dp"
-        android:layout_height="49dp"
-        android:background="@drawable/roundbuttons"
-        android:onClick="kontuaSortu"
-        android:text="@string/crearcuenta"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95"
-        android:radius="3dip"/>
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="132dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="12dp"
-        android:background="#99FFFFFF"
-        android:radius="3dip"
-        android:text="@string/experiencia"
-        app:layout_constraintBottom_toTopOf="@+id/signup_crearcuenta_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <RadioGroup
-        android:id="@+id/signup_genre_rg"
-        android:layout_width="367dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="8dp"
-        android:background="#99FFFFFF"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:radius="3dip">
-
-        <RadioButton
-            android:id="@+id/signup_male_rb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/hombre" />
-
-        <RadioButton
-            android:id="@+id/signup_female_rb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/mujer" />
-
-        <RadioButton
-            android:id="@+id/signup_other_rb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/otro" />
-
-    </RadioGroup>
-
-    <EditText
-        android:id="@+id/signup_password_ed"
-        android:layout_width="330dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="16dp"
-        android:background="#99FFFFFF"
-        android:ems="10"
-        android:hint="@string/contraseña"
-        android:inputType="textPassword"
-        android:paddingLeft="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/signup_genre_rg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_user_ed"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="TouchTargetSizeCheck" />
+    tools:context=".activitys.SignupActivity"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189"
-        app:srcCompat="@drawable/bg1" />
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/bg1"
+        android:layout_centerHorizontal="true"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="230dp"
+        android:layout_height="53dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:layout_marginTop="250dp"
+        android:fontFamily="@font/campus"
+        tools:text="@string/Title" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:layout_marginTop="350dp"
+        android:gravity="center_vertical"
+        android:layout_centerHorizontal="true">
+        <EditText
+            android:id="@+id/signup_user_ed"
+            android:layout_width="330dp"
+            android:layout_height="45dp"
+            android:background="@drawable/borders"
+            android:hint="@string/usuario"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            tools:ignore="TouchTargetSizeCheck"
+            android:layout_centerHorizontal="true"/>
+        <EditText
+            android:id="@+id/signup_password_ed"
+            android:layout_width="330dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/borders"
+            android:ems="10"
+            android:hint="@string/contraseña"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            tools:ignore="TouchTargetSizeCheck"
+            android:layout_centerHorizontal="true"/>
+
+
+        <RadioGroup
+            android:id="@+id/signup_genre_rg"
+            android:layout_width="367dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/borders"
+            android:orientation="horizontal"
+            android:radius="3dip"
+            android:layout_marginTop="120dp">
+
+            <RadioButton
+                android:id="@+id/signup_male_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/hombre" />
+
+            <RadioButton
+                android:id="@+id/signup_female_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mujer" />
+
+            <RadioButton
+                android:id="@+id/signup_other_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/otro" />
+
+        </RadioGroup>
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="132dp"
+            android:layout_height="45dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/borders"
+            android:layout_marginTop="190dp"
+            android:radius="3dip"
+            android:text="@string/experiencia"
+            tools:ignore="TouchTargetSizeCheck"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/signup_crearcuenta_btn"
+            android:layout_width="161dp"
+            android:layout_height="49dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/borders"
+            android:onClick="kontuaSortu"
+            android:radius="3dip"
+            android:text="@string/crearcuenta" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

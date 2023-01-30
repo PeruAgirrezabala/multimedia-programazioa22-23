@@ -59,9 +59,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="216dp"
+        android:layout_width="230dp"
         android:layout_height="53dp"
-        android:text="TextView"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="28dp"
@@ -71,7 +70,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.073"
-        tools:text="𝓚𝓷𝓾𝓬𝓴𝓵𝓮 𝓑𝓸𝔁𝓲𝓷𝓰" />
+        android:fontFamily="@font/campus"
+        android:text="@string/Title" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
