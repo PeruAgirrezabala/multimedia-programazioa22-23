@@ -7,7 +7,9 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
+//uses Room annotations to define the table structure for storing user data in a SQLite database.
 
+//The class implements Serializable to allow objects of this type to be passed between activities using Intents
 @Entity(tableName = "user")
 public class User implements  Serializable{
     @PrimaryKey
@@ -33,6 +35,7 @@ public class User implements  Serializable{
         this.sexo=sexo;
         this.experiencia=experiencia;
     }
+    //The class has getters and setters for each attribute and a constructor that takes all four attributes as parameters.
     public String getUser(){
         return usuario;
     }

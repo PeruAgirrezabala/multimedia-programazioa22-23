@@ -3,7 +3,7 @@
     android:id="@+id/recyclerview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#4FE1C4C4"
+    android:background="#BF6A6767"
     android:orientation="vertical">
 
 

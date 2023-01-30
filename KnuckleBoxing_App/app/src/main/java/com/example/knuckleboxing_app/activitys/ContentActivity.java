@@ -68,6 +68,7 @@ public class ContentActivity extends AppCompatActivity implements Serializable {
     }
     public void TeamMatesAction() {
         Intent intent = new Intent(ContentActivity.this, TeamMatesActivity.class);
+        intent.putExtra("usuarioLogeado", (Serializable) user1);
         startActivity(intent);
     }
 

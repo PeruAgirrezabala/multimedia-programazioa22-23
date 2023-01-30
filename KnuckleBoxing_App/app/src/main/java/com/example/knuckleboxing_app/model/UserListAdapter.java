@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.knuckleboxing_app.R;
 
 import java.util.List;
-
+//This is an adapter for RecyclerView that displays the user information in a list format
 public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyViewHolder> {
 
     private Context context;
@@ -27,7 +27,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyView
         this.userList = userList;
         notifyDataSetChanged();
     }
-
+    //It inflates the item layout using the LayoutInflater from the provided context.
     @NonNull
     @Override
     public UserListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,7 +35,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyView
 
         return new MyViewHolder(view);
     }
-
+    //binds the data to the TextView widgets in the item layout by setting the text of each widget based on the data at the corresponding position in the userList
     @Override
     public void onBindViewHolder(@NonNull UserListAdapter.MyViewHolder holder, int position) {
         holder.userTV.setText("NOMBRE:"+this.userList.get(position).usuario);
@@ -46,7 +46,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.MyView
             holder.experienciaTV.setText("EXPERIENCIA:NO");
         }
     }
-
+    //returns the number of items in the list
     @Override
     public int getItemCount() {
         return  this.userList.size();

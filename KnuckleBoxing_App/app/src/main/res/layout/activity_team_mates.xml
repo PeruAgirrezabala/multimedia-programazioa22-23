@@ -7,6 +7,14 @@
     android:background="#BF6A6767"
     tools:context=".activitys.TeamMatesActivity"
     android:orientation="vertical">
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Back"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        />
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,7 +36,7 @@
         android:textColor="@color/white"
         android:textSize="28dp"
         android:layout_marginTop="250dp"
-        tools:text="@string/Title"
+        android:text="@string/Title"
         android:fontFamily="@font/campus"/>
     <TextView
         android:layout_width="wrap_content"
@@ -37,7 +45,7 @@
         android:textAlignment="center"
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
-        android:text="COMPAÑEROS"
+        android:text="@string/TeamMates"
         android:textSize="22dp"
         android:layout_marginTop="330dp"
         android:layout_alignParentLeft="true"
@@ -53,12 +61,6 @@
 
         />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:layout_alignParentBottom="true"/>
 
 
 </RelativeLayout>

@@ -17,7 +17,7 @@ import com.example.knuckleboxing_app.R;
 import com.example.knuckleboxing_app.model.DBTaskGetUserList;
 import com.example.knuckleboxing_app.model.User;
 import com.example.knuckleboxing_app.model.UserDatabase;
-
+//This code is the MainActivity class in an Android app that allows users to sign up or log in to the app.
 public class MainActivity extends AppCompatActivity {
 
     private LiveData<List<User>> mUser;
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    //The toLogin method retrieves a list of all users in the database using the DBTaskGetUserList class and displays a Toast message if the list is empty. If the list is not empty, it launches the LoginActivity
     public void toLogin() throws ExecutionException, InterruptedException {
 
         UserDatabase db = UserDatabase.getInstance(getApplicationContext());
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Momentu honetan ez dago konturik sortuta", Toast.LENGTH_SHORT).show();
         }
     }
-
+    //The toSignUp method launches the SignupActivity
     public void toSignUp() {
         Intent signupActivity = new Intent(MainActivity.this, SignupActivity.class);
         startActivity((signupActivity));

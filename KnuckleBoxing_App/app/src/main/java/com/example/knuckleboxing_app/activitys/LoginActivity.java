@@ -19,13 +19,14 @@ import com.example.knuckleboxing_app.R;
 import com.example.knuckleboxing_app.model.DBTaskGetUserList;
 import com.example.knuckleboxing_app.model.User;
 import com.example.knuckleboxing_app.model.UserDatabase;
-
+//The code is an implementation of a login activity in an Android app. It defines a LoginActivity class that extends AppCompatActivity and contains methods to handle a user's login process.
 public class LoginActivity extends AppCompatActivity  {
     Button confirm_login_btn;
     TextView username_login_tv, password_login_tv;
     private LiveData<List<User>> mUser;
     private List<User> mListUser;
 
+    //The code initializes UI components in onCreate method and sets a click listener for the login button
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +53,7 @@ public class LoginActivity extends AppCompatActivity  {
         password_login_tv = findViewById(R.id.password_et);
     }
 
-
+    //The listener calls the logAction method, which retrieves user input from the username and password text views and queries the user database for a matching user
     public void logAction() throws ExecutionException, InterruptedException {
 
         Intent to_content = new Intent(LoginActivity.this, ContentActivity.class);

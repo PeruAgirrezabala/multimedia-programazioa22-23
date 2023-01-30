@@ -18,18 +18,20 @@ import com.example.knuckleboxing_app.model.User;
 import com.example.knuckleboxing_app.model.UserDatabase;
 import com.example.knuckleboxing_app.model.UserListAdapter;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class TeamMatesActivity extends AppCompatActivity {
     private UserListAdapter userListAdapter;
     private Button button_back;
-
+    private User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_mates);
         initRecyclerView();
+        user = (User) getIntent().getSerializableExtra("usuarioLogeado");
         try {
             loadUserList();
         } catch (ExecutionException e) {
@@ -42,6 +44,7 @@ public class TeamMatesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent to_content = new Intent(TeamMatesActivity.this, ContentActivity.class);
+                to_content.putExtra("usuarioLogeado", (Serializable) user);
                 startActivity(to_content);
             }
         });

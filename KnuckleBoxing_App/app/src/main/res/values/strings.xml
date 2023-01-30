@@ -16,4 +16,6 @@
     <string name="miercoles">Miercoles:  18:00 - 20:00</string>
     <string name="jueves">Jueves: 20:00 - 22:00</string>
     <string name="Title" translatable="false">KNUCKLE BOXING</string>
+    <string name="Back">Back</string>
+    <string name="TeamMates">Team mates</string>
 </resources>

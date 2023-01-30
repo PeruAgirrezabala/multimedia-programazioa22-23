@@ -27,7 +27,7 @@
         android:textSize="28dp"
         android:layout_marginTop="250dp"
         android:fontFamily="@font/campus"
-        tools:text="@string/Title" />
+        android:text="@string/Title"/>
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="300dp"

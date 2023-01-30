@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.458"
-        tools:text="@string/Title" />
+        android:text="@string/Title" />
 
     <EditText
         android:id="@+id/username_et"
